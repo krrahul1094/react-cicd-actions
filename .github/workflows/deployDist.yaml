@@ -36,7 +36,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     needs: test
-    
+
     defaults:
       run:
         working-directory: starter-code-cicd
@@ -61,7 +61,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dist-files
-          path: dist
+          path: starter-code-cicd/dist
 
   deploy:
     runs-on: ubuntu-latest
