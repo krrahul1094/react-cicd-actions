@@ -6,6 +6,10 @@ jobs:
   greet:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: starter-code-cicd
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -15,14 +19,11 @@ jobs:
         with:
           node-version: 20
 
-      - name: Print Node Version
-        run: node -v
+      - name: Debug Files
+        run: ls
 
       - name: Install Dependencies
-        working-directory: starter-code-cicd
         run: npm ci
 
       - name: Run Tests
-        working-directory: starter-code-cicd
         run: npm run test
-        
